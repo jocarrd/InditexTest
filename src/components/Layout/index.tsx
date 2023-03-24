@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
 
 export const Layout = () => {
@@ -9,7 +10,7 @@ export const Layout = () => {
         </Link>
         <hr />
       </header>
-      <main className=" flex  flex-col place-items-center">
+      <main className="flex flex-col place-items-center p-8">
         <Outlet />
       </main>
     </>
