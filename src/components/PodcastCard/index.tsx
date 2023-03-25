@@ -1,6 +1,10 @@
-import React from 'react'
+import { Podcast } from '../../types'
 
-export const PodcastCard = ({ podcast }) => {
+type PodcastCardProps = {
+  podcast: Podcast
+}
+
+export const PodcastCard = ({ podcast }: PodcastCardProps) => {
   return (
     <div className="flex flex-col md:max-w-lg place-items-center shadow-md border-gray-300 duration-300 hover:-translate-y-1">
       <img

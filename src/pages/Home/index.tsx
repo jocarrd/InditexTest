@@ -1,5 +1,6 @@
 import { usePodcasts } from '../../hooks/usePodcasts'
 import { PodcastCard } from '../../components/PodcastCard'
+import { Podcast } from '../../types'
 
 export const Home = () => {
   const {
@@ -10,9 +11,8 @@ export const Home = () => {
 
   return (
     <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8  gap-y-32">
-      {podcasts.map((podcast) => (
-        <PodcastCard podcast={podcast} />
-      ))}
+      {!loading &&
+        podcasts?.map((podcast: Podcast) => <PodcastCard podcast={podcast} />)}
     </div>
   )
 }
