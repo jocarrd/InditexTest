@@ -1,6 +1,5 @@
 import { usePodcasts } from '../../hooks/usePodcasts'
 import { PodcastCard } from '../../components/PodcastCard'
-import React from 'react'
 
 export const Home = () => {
   const {
