@@ -18,5 +18,9 @@ export const usePodcasts = () => {
       })
     }
   }, [])
-  return { state: { loading, podcasts }, actions: {} }
+
+  const filterPodcasts = (podcasts: Podcast[]) => {
+    setPodcasts(podcasts)
+  }
+  return { state: { loading, podcasts }, actions: { filterPodcasts } }
 }

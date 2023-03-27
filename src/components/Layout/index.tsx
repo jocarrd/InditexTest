@@ -10,7 +10,7 @@ export const Layout = () => {
         </Link>
         <hr />
       </header>
-      <main className="flex flex-col place-items-center p-8">
+      <main>
         <Outlet />
       </main>
     </>
