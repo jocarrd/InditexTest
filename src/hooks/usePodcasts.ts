@@ -9,12 +9,18 @@ export const usePodcasts = () => {
   )
 
   useEffect(() => {
-    if (!podcasts) {
+    const expirationTime = 24 * 60 * 60 * 1000
+    const storedTime = localStorage.getItem('storedTime')
+    const revalidate =
+      storedTime && Date.now() - parseInt(storedTime, 10) > expirationTime
+
+    if (!podcasts || revalidate) {
       setLoading(true)
       Services.getMainPodcasts().then((podcasts) => {
         setPodcasts(podcasts.feed.entry)
         setLoading(false)
         localStorage.setItem('podcasts', JSON.stringify(podcasts.feed.entry))
+        localStorage.setItem('date', Date.now().toString())
       })
     }
   }, [])

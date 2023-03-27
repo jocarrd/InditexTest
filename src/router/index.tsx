@@ -11,6 +11,10 @@ const routes = [
         path: '/',
         element: <Home />,
       },
+      {
+        path: '/podcast/:id',
+        element: <Home />,
+      },
     ],
   },
 ]
