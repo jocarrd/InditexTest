@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
-import { Podcast } from '../../types'
+import { Podcast } from '../../types/Podcast'
 
 type SearcherProps = {
   podcasts: Podcast[]
@@ -39,7 +39,7 @@ export const Searcher = ({ podcasts, filterPodcasts }: SearcherProps) => {
         return titleMatch || artistMatch
       }
     )
-    filterPodcasts(filteredPodcasts)
+    filteredPodcasts.length > 0 && filterPodcasts(filteredPodcasts)
   }
 
   return (

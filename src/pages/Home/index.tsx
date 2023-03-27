@@ -1,6 +1,6 @@
 import { usePodcasts } from '../../hooks/usePodcasts'
 import { PodcastCard } from '../../components/PodcastCard'
-import { Podcast } from '../../types'
+import { Podcast } from '../../types/Podcast'
 import { Searcher } from '../../components/Searcher'
 
 export const Home = () => {

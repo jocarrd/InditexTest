@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Services } from '../services/Services'
-import { Podcast } from '../types'
+import { Podcast } from '../types/Podcast'
 
 export const usePodcasts = () => {
   const [loading, setLoading] = useState(false)
