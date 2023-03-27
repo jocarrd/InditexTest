@@ -10,7 +10,7 @@ export const Layout = () => {
         </Link>
         <hr />
       </header>
-      <main>
+      <main className="md:px-6">
         <Outlet />
       </main>
     </>

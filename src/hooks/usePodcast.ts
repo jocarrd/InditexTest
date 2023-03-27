@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Services } from '../services/Services'
 import { PodcastDetail } from '../types/PodcastDetail'
+import { usePodcasts } from './usePodcasts'
 
 type Props = {
   id: string
@@ -8,15 +9,27 @@ type Props = {
 
 export const usePodcast = ({ id }: Props) => {
   const [loading, setLoading] = useState(false)
-  const [podcast, setPodcast] = useState<PodcastDetail>()
+  const [episodes, setEpisodes] = useState<PodcastDetail>()
+  const {
+    state: { podcasts },
+  } = usePodcasts()
+  const podcastInfo = podcasts.find(
+    (podcast) => podcast.id.attributes['im:id'] === id
+  )
 
   useEffect(() => {
-    setLoading(true)
-    Services.getPodcastDetail(id).then((podcasts) => {
-      setPodcast(podcasts)
+    Services.getPodcastDetail(id).then((episodes) => {
+      setEpisodes(episodes)
       setLoading(false)
     })
   }, [])
 
-  return { state: { loading, podcast }, actions: {} }
+  return {
+    state: {
+      loading,
+      episodes,
+      podcastInfo,
+    },
+    actions: {},
+  }
 }
