@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Services } from '../services/Services'
 import { PodcastDetail } from '../types/PodcastDetail'
 import { usePodcasts } from './usePodcasts'
@@ -24,12 +24,21 @@ export const usePodcast = ({ id }: Props) => {
     })
   }, [])
 
+  const findEpisode = useCallback(
+    (episodeId: string) => {
+      return episodes?.results.find(
+        (episode) => episode.episodeGuid === episodeId
+      )
+    },
+    [episodes]
+  )
+
   return {
     state: {
       loading,
       episodes,
       podcastInfo,
     },
-    actions: {},
+    actions: { findEpisode },
   }
 }

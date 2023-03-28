@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { Layout } from '../components/Layout'
+import { Episode } from '../pages/Episode'
 import { Home } from '../pages/Home'
-import { PodcastDetail } from '../pages/PodcastDetail'
+import { Podcast } from '../pages/Podcast'
 
 const routes = [
   {
@@ -13,7 +14,11 @@ const routes = [
       },
       {
         path: '/podcast/:id',
-        element: <PodcastDetail />,
+        element: <Podcast />,
+      },
+      {
+        path: '/podcast/:podcastid/episode/:episodeid',
+        element: <Episode />,
       },
     ],
   },

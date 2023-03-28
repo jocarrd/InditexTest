@@ -6,7 +6,8 @@ export const Services = {
   getMainPodcasts: (): Promise<Podcast[]> =>
     new Promise((resolve, reject) => {
       fetch(MAIN_PODCASTS)
-        .then((response) => resolve(response.json()))
+        .then((response) => response.json())
+        .then((response) => resolve(response.feed.entry))
         .catch(reject)
     }),
   getPodcastDetail: (id: string): Promise<PodcastDetail> =>

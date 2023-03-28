@@ -17,9 +17,9 @@ export const usePodcasts = () => {
     if (!podcasts || revalidate) {
       setLoading(true)
       Services.getMainPodcasts().then((podcasts) => {
-        setPodcasts(podcasts.feed.entry)
+        setPodcasts(podcasts)
         setLoading(false)
-        localStorage.setItem('podcasts', JSON.stringify(podcasts.feed.entry))
+        localStorage.setItem('podcasts', JSON.stringify(podcasts))
         localStorage.setItem('date', Date.now().toString())
       })
     }
