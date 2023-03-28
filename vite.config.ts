@@ -19,6 +19,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
+    setupFiles: ['./vitest.setup.ts'],
   },
   mode: process.env.NODE_ENV || 'development',
 })

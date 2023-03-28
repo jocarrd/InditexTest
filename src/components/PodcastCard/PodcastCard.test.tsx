@@ -1,12 +1,11 @@
 import { render, screen } from '@testing-library/react'
 import { PodcastCard } from '.'
-import { describe, it, expect } from 'vitest'
 import { mockPodcast } from '../../mocks'
 import { BrowserRouter } from 'react-router-dom'
 
 describe('PodcastCard', async () => {
-  it('should display title, image, author', async () => {
-    await render(
+  it('renders the podcast card', () => {
+    render(
       <BrowserRouter>
         <PodcastCard podcast={mockPodcast} />
       </BrowserRouter>
