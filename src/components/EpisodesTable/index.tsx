@@ -12,9 +12,9 @@ export const EpisodesTable = ({ podcast, id }: EpisodeTableProps) => {
     <table className="border-separate w-full ">
       <thead>
         <tr>
-          <th className="border-b-2">Title</th>
-          <th className="border-b-2">Date</th>
-          <th className="border-b-2">Duration</th>
+          <th className="border-b-2 text-left">Title</th>
+          <th className="border-b-2 text-left">Date</th>
+          <th className="border-b-2 text-left">Duration</th>
         </tr>
       </thead>
       <tbody>

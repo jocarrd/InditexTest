@@ -12,8 +12,8 @@ export const PodcastDetail = () => {
 
   return (
     podcastInfo && (
-      <div className="md:grid md:grid-cols-3 flex flex-col px-4 md:px-9 gap-28 ">
-        <div className="flex flex-col lg:max-w-sm shadow-md gap-4 border-gray-100 border-2 h-fit p-8">
+      <div className="md:grid md:grid-cols-3 flex flex-col px-4 md:px-9 gap-28 py-4 ">
+        <div className="flex transform transition duration-500 hover:scale-105 flex-col lg:max-w-sm shadow-md gap-4 border-gray-100 border-2 h-fit p-8">
           <img
             className="mx-auto  pb-4"
             height={250}
