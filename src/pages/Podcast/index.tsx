@@ -2,7 +2,6 @@ import { Navigate, useParams } from 'react-router-dom'
 import { EpisodesTable } from '../../components/EpisodesTable'
 import { PodcastDetail } from '../../components/PodcastDetail'
 import { usePodcast } from '../../hooks/usePodcast'
-import { DotWave } from '@uiball/loaders'
 
 export const Podcast = () => {
   const { id = '' } = useParams()
@@ -21,7 +20,7 @@ export const Podcast = () => {
         </div>
         <div className="p-2 flex shadow-md border-gray-100 border-2 ">
           {episodes && (
-            <EpisodesTable podcast={episodes.results} id={id || ''} />
+            <EpisodesTable podcast={episodes.results.slice(1)} id={id || ''} />
           )}
         </div>
       </div>

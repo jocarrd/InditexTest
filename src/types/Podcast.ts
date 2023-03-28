@@ -65,7 +65,7 @@ interface IMPriceAttributes {
 }
 
 interface IMReleaseDate {
-  label: Date
+  label: string
   attributes: IMArtist
 }
 
