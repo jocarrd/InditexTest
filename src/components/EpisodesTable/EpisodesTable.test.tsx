@@ -5,7 +5,7 @@ import { EpisodesTable } from '.'
 import { convertTime, formatDate } from '../../helpers/utils'
 
 describe('EpisodesTable component', () => {
-  it('should render a table with episode data', () => {
+  it('should render a table with episodes data', () => {
     render(
       <BrowserRouter>
         <EpisodesTable episodes={mockEpisodes} id="123" />

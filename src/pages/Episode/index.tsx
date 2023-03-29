@@ -11,10 +11,10 @@ export const Episode = () => {
 
   const episode = findEpisode(episodeid)
   return (
-    <div className="lg:grid lg:grid-cols-3 flex flex-col lg:px-4 md:px-9">
+    <div className="lg:grid lg:grid-cols-3 px-4 flex flex-col py-4 md:px-9">
       {podcastInfo && <PodcastDetail podcastInfo={podcastInfo} />}
       {episode && (
-        <div className="flex flex-col md:col-span-2 gap-8 shadow-md border-gray-100 border-2 p-8 h-fit ">
+        <div className="flex  flex-col md:col-span-2 gap-8 shadow-md border-gray-100 border-2 p-8 h-fit ">
           <h2 className="font-bold text-2xl">{episode?.trackName}</h2>
           <p className="italic">{episode?.description}</p>
           <hr />
