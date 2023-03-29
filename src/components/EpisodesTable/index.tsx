@@ -3,11 +3,11 @@ import { convertTime, formatDate } from '../../helpers/utils'
 import { PodcastDetail } from '../../types/PodcastDetail'
 
 type EpisodeTableProps = {
-  podcast: PodcastDetail['results']
+  episodes: PodcastDetail['results']
   id: string
 }
 
-export const EpisodesTable = ({ podcast, id }: EpisodeTableProps) => {
+export const EpisodesTable = ({ episodes, id }: EpisodeTableProps) => {
   return (
     <table className="border-separate w-full ">
       <thead>
@@ -18,21 +18,21 @@ export const EpisodesTable = ({ podcast, id }: EpisodeTableProps) => {
         </tr>
       </thead>
       <tbody>
-        {podcast.map((podcast) => (
+        {episodes.map((episode) => (
           <tr
             className="odd:bg-white even:bg-gray-100 h-12 duration-300 hover:-translate-y-1"
-            key={podcast.trackId}
+            key={episode.trackId}
           >
             <td className="border-b-2 text-blue-700">
-              <Link to={`/podcast/${id}/episode/${podcast.episodeGuid}`}>
-                {podcast.trackName}
+              <Link to={`/podcast/${id}/episode/${episode.episodeGuid}`}>
+                {episode.trackName}
               </Link>
             </td>
             <td className="border-b-2">
-              {formatDate(podcast.releaseDate.toString())}
+              {formatDate(episode.releaseDate.toString())}
             </td>
             <td className="border-b-2">
-              {convertTime(podcast.trackTimeMillis)}
+              {convertTime(episode.trackTimeMillis)}
             </td>
           </tr>
         ))}
