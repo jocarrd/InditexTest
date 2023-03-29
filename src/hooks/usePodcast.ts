@@ -16,7 +16,7 @@ export const usePodcast = ({ id }: Props) => {
     () => JSON.parse(localStorage.getItem(id) as string)?.episodes
   )
   const {
-    state: { podcasts },
+    state: { podcasts, loading: loadingPodcasts },
   } = usePodcasts()
 
   useEffect(() => {
@@ -25,6 +25,7 @@ export const usePodcast = ({ id }: Props) => {
     )?.expiration
 
     if (!episodes || revalidate(EXPIRATION_TIME, storedTime)) {
+      setLoading(true)
       Services.getPodcastDetail(id).then((episodes) => {
         setEpisodes(episodes)
         setLoading(false)
@@ -54,7 +55,7 @@ export const usePodcast = ({ id }: Props) => {
 
   return {
     state: {
-      loading,
+      loading: loading || loadingPodcasts,
       episodes,
       podcastInfo,
     },
