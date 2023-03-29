@@ -2,11 +2,6 @@ import react from '@vitejs/plugin-react'
 import legacy from '@vitejs/plugin-legacy'
 import { defineConfig } from 'vitest/config'
 
-/*
-El plugin vite-plugin-legacy se encarga concatenar y minimizar los archivos de assets en un solo archivo. 
-Además tambien genera una versión compatible con navegadores más antiguos, y además optimiza el tamaño del archivo de assets. 
-*/
-
 export default defineConfig({
   plugins: [
     react(),

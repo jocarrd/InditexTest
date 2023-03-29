@@ -1,10 +1,15 @@
 import { render, screen } from '@testing-library/react'
 import { mockPodcast } from '../../mocks'
 import { PodcastDetail } from '.'
+import { BrowserRouter } from 'react-router-dom'
 
 describe('PodcastDetail component', () => {
   it('renders the podcast detail', () => {
-    render(<PodcastDetail podcastInfo={mockPodcast} />)
+    render(
+      <BrowserRouter>
+        <PodcastDetail podcastInfo={mockPodcast} />
+      </BrowserRouter>
+    )
 
     const podcastTitle = screen.getByText(mockPodcast['im:name'].label)
     expect(podcastTitle)

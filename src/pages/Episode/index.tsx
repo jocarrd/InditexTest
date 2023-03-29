@@ -16,7 +16,10 @@ export const Episode = () => {
       {episode && (
         <div className="flex  flex-col md:col-span-2 gap-8 shadow-md border-gray-100 border-2 p-8 h-fit ">
           <h2 className="font-bold text-2xl">{episode?.trackName}</h2>
-          <p className="italic">{episode?.description}</p>
+          <div
+            className="italic"
+            dangerouslySetInnerHTML={{ __html: episode?.description }}
+          />
           <hr />
           <audio controls className="w-full">
             <source src={episode?.previewUrl} type="audio/mpeg" />

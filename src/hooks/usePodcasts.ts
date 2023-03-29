@@ -1,26 +1,31 @@
 import { useEffect, useState } from 'react'
+import { revalidate } from '../helpers/utils'
 import { Services } from '../services/Services'
 import { Podcast } from '../types/Podcast'
 
+const EXPIRATION_TIME = 24 * 60 * 60 * 1000
+
 export const usePodcasts = () => {
   const [loading, setLoading] = useState(false)
-  const [podcasts, setPodcasts] = useState<Podcast[]>(() =>
-    JSON.parse(localStorage.getItem('podcasts') as string)
+  const [podcasts, setPodcasts] = useState<Podcast[]>(
+    () => JSON.parse(localStorage.getItem('podcasts') as string)?.podcasts
   )
 
   useEffect(() => {
-    const expirationTime = 24 * 60 * 60 * 1000
-    const storedTime = localStorage.getItem('storedTime')
-    const revalidate =
-      storedTime && Date.now() - parseInt(storedTime, 10) > expirationTime
+    const storedTime = JSON.parse(
+      localStorage.getItem('podcasts') as string
+    )?.expiration
 
-    if (!podcasts || revalidate) {
+    if (!podcasts || revalidate(EXPIRATION_TIME, storedTime)) {
+      console.log('Entra')
       setLoading(true)
       Services.getMainPodcasts().then((podcasts) => {
         setPodcasts(podcasts)
         setLoading(false)
-        localStorage.setItem('podcasts', JSON.stringify(podcasts))
-        localStorage.setItem('date', Date.now().toString())
+        localStorage.setItem(
+          'podcasts',
+          JSON.stringify({ podcasts, expiration: Date.now().toString() })
+        )
       })
     }
   }, [])

@@ -21,9 +21,9 @@ describe('EpisodesTable component', () => {
         convertTime(episode.trackTimeMillis)
       )
 
-      expect(episodeTitle).toBeInTheDocument()
-      expect(episodeDate).toBeInTheDocument()
-      expect(episodeDuration).toBeInTheDocument()
+      expect(episodeTitle).toBe
+      expect(episodeDate).toBe
+      expect(episodeDuration).toBe
     })
   })
 })

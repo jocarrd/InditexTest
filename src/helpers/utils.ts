@@ -19,3 +19,7 @@ export function formatDate(dateString: string) {
 
   return formattedDate
 }
+
+export function revalidate(EXPIRATION_TIME: number, storedTime: string) {
+  return storedTime && Date.now() - parseInt(storedTime, 10) > EXPIRATION_TIME
+}

@@ -9,8 +9,6 @@ export const Home = () => {
     actions: { filterPodcasts },
   } = usePodcasts()
 
-  console.log(podcasts)
-
   return (
     <div className="flex flex-col p-4 gap-36 ">
       <div className="flex gap-4 justify-end items-center">

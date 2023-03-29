@@ -1,7 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
+import { revalidate } from '../helpers/utils'
 import { Services } from '../services/Services'
 import { PodcastDetail } from '../types/PodcastDetail'
 import { usePodcasts } from './usePodcasts'
+
+const EXPIRATION_TIME = 24 * 60 * 60 * 1000
 
 type Props = {
   id: string
@@ -9,20 +12,36 @@ type Props = {
 
 export const usePodcast = ({ id }: Props) => {
   const [loading, setLoading] = useState(false)
-  const [episodes, setEpisodes] = useState<PodcastDetail>()
+  const [episodes, setEpisodes] = useState<PodcastDetail>(
+    () => JSON.parse(localStorage.getItem(id) as string)?.episodes
+  )
   const {
     state: { podcasts },
   } = usePodcasts()
+
+  useEffect(() => {
+    const storedTime = JSON.parse(
+      localStorage.getItem(id) as string
+    )?.expiration
+
+    if (!episodes || revalidate(EXPIRATION_TIME, storedTime)) {
+      Services.getPodcastDetail(id).then((episodes) => {
+        setEpisodes(episodes)
+        setLoading(false)
+        localStorage.setItem(
+          id,
+          JSON.stringify({
+            episodes,
+            expiration: Date.now().toString(),
+          })
+        )
+      })
+    }
+  }, [])
+
   const podcastInfo = podcasts.find(
     (podcast) => podcast.id.attributes['im:id'] === id
   )
-
-  useEffect(() => {
-    Services.getPodcastDetail(id).then((episodes) => {
-      setEpisodes(episodes)
-      setLoading(false)
-    })
-  }, [])
 
   const findEpisode = useCallback(
     (episodeId: string) => {

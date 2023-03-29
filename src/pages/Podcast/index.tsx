@@ -20,7 +20,10 @@ export const Podcast = () => {
         </div>
         <div className="p-2 flex shadow-md border-gray-100 border-2 ">
           {episodes && (
-            <EpisodesTable episodes={episodes.results.slice(1)} id={id || ''} />
+            <EpisodesTable
+              episodes={episodes?.results?.slice(1)}
+              id={id || ''}
+            />
           )}
         </div>
       </div>
