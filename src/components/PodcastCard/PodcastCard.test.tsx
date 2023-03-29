@@ -11,7 +11,7 @@ describe('PodcastCard', async () => {
       </BrowserRouter>
     )
 
-    const podcastTitle = screen.getByText(mockPodcast.title.label)
+    const podcastTitle = screen.getByText(mockPodcast['im:name'].label)
     expect(podcastTitle)
 
     const podcastAuthor = screen.getByText(

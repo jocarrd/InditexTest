@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Spinner } from '../Spinner'
 
 type LayoutProps = {
