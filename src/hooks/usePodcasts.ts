@@ -17,7 +17,6 @@ export const usePodcasts = () => {
     )?.expiration
 
     if (!podcasts || revalidate(EXPIRATION_TIME, storedTime)) {
-      console.log('Entra')
       setLoading(true)
       Services.getMainPodcasts().then((podcasts) => {
         setPodcasts(podcasts)
