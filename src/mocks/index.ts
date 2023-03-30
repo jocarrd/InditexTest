@@ -1,6 +1,985 @@
 import { Podcast } from '../types/Podcast'
 import { PodcastDetail } from '../types/PodcastDetail'
 
+export const mockPodcasts: Podcast[] = [
+  {
+    'im:name': {
+      label: 'The Joe Budden Podcast',
+    },
+    'im:image': [
+      {
+        label:
+          'https://is3-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/55x55bb.png',
+        attributes: {
+          height: '55',
+        },
+      },
+      {
+        label:
+          'https://is5-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/60x60bb.png',
+        attributes: {
+          height: '60',
+        },
+      },
+      {
+        label:
+          'https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/170x170bb.png',
+        attributes: {
+          height: '170',
+        },
+      },
+    ],
+    summary: {
+      label:
+        'Tune into Joe Budden and his friends. Follow along the crazy adventures of these very random friends.',
+    },
+    'im:price': {
+      label: 'Get',
+      attributes: {
+        amount: '0',
+        currency: 'USD',
+      },
+    },
+    'im:contentType': {
+      attributes: {
+        term: 'Podcast',
+        label: 'Podcast',
+      },
+    },
+    title: {
+      label: 'The Joe Budden Podcast - The Joe Budden Network',
+    },
+    link: {
+      attributes: {
+        rel: 'alternate',
+        type: 'text/html',
+        href: 'https://podcasts.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?uo=2',
+      },
+    },
+    id: {
+      label:
+        'https://podcasts.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?uo=2',
+      attributes: {
+        'im:id': '1535809341',
+      },
+    },
+    'im:artist': {
+      label: 'The Joe Budden Network',
+      attributes: {
+        href: 'https://podcasts.apple.com/us/artist/the-joe-budden-network/1535844019?uo=2',
+      },
+    },
+    category: {
+      attributes: {
+        'im:id': '1310',
+        term: 'Music',
+        scheme:
+          'https://podcasts.apple.com/us/genre/podcasts-music/id1310?uo=2',
+        label: 'Music',
+      },
+    },
+    'im:releaseDate': {
+      label: '2023-03-25T00:00:00-07:00',
+      attributes: {
+        label: 'March 25, 2023',
+      },
+    },
+  },
+  {
+    'im:name': {
+      label: 'Drink Champs',
+    },
+    'im:image': [
+      {
+        label:
+          'https://is4-ssl.mzstatic.com/image/thumb/Podcasts113/v4/46/39/69/46396977-6d87-f120-6432-6373dcefdf9b/mza_6589930413574180525.jpg/55x55bb.png',
+        attributes: {
+          height: '55',
+        },
+      },
+      {
+        label:
+          'https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/46/39/69/46396977-6d87-f120-6432-6373dcefdf9b/mza_6589930413574180525.jpg/60x60bb.png',
+        attributes: {
+          height: '60',
+        },
+      },
+      {
+        label:
+          'https://is4-ssl.mzstatic.com/image/thumb/Podcasts113/v4/46/39/69/46396977-6d87-f120-6432-6373dcefdf9b/mza_6589930413574180525.jpg/170x170bb.png',
+        attributes: {
+          height: '170',
+        },
+      },
+    ],
+    summary: {
+      label:
+        'Legendary Queens rapper-turned show host N.O.R.E. teams up with Miami hip-hop pioneer DJ EFN for a night of boozy conversation and boisterous storytelling. The hosts and guests engage together in fun, light-hearted conversation - looking back at their paths to success, highlighting their lives, friendships, and iconic moments within their career. In this unfiltered series, drinks are flowing and jokes are rolling - take a seat at the table with N.O.R.E & EFN. You Gotta Relax!',
+    },
+    'im:price': {
+      label: 'Get',
+      attributes: {
+        amount: '0',
+        currency: 'USD',
+      },
+    },
+    'im:contentType': {
+      attributes: {
+        term: 'Podcast',
+        label: 'Podcast',
+      },
+    },
+    title: {
+      label: 'Drink Champs - Interval Presents',
+    },
+    link: {
+      attributes: {
+        rel: 'alternate',
+        type: 'text/html',
+        href: 'https://podcasts.apple.com/us/podcast/drink-champs/id1096830182?uo=2',
+      },
+    },
+    id: {
+      label:
+        'https://podcasts.apple.com/us/podcast/drink-champs/id1096830182?uo=2',
+      attributes: {
+        'im:id': '1096830182',
+      },
+    },
+    'im:artist': {
+      label: 'Interval Presents',
+      attributes: {
+        href: 'https://podcasts.apple.com/us/artist/iheartradio/284341002?uo=2',
+      },
+    },
+    category: {
+      attributes: {
+        'im:id': '1310',
+        term: 'Music',
+        scheme:
+          'https://podcasts.apple.com/us/genre/podcasts-music/id1310?uo=2',
+        label: 'Music',
+      },
+    },
+    'im:releaseDate': {
+      label: '2023-03-17T00:01:00-07:00',
+      attributes: {
+        label: 'March 17, 2023',
+      },
+    },
+  },
+  {
+    'im:name': {
+      label: 'Million Dollaz Worth Of Game',
+    },
+    'im:image': [
+      {
+        label:
+          'https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/7b/cf/f6/7bcff6bb-5f99-6c2f-c6c5-3a9799f3df21/mza_8544742664200824246.jpg/55x55bb.png',
+        attributes: {
+          height: '55',
+        },
+      },
+      {
+        label:
+          'https://is3-ssl.mzstatic.com/image/thumb/Podcasts125/v4/7b/cf/f6/7bcff6bb-5f99-6c2f-c6c5-3a9799f3df21/mza_8544742664200824246.jpg/60x60bb.png',
+        attributes: {
+          height: '60',
+        },
+      },
+      {
+        label:
+          'https://is2-ssl.mzstatic.com/image/thumb/Podcasts125/v4/7b/cf/f6/7bcff6bb-5f99-6c2f-c6c5-3a9799f3df21/mza_8544742664200824246.jpg/170x170bb.png',
+        attributes: {
+          height: '170',
+        },
+      },
+    ],
+    summary: {
+      label:
+        'The Million Dollaz Worth of Game show, a weekly podcast with rapper/actor @GillieDaKing and social media influencer and disruptor @Wallo267 - The perfect blend of discussing music, real life issues, personal experiences, honest advice and comedy\n\nYou can find every episode of this show on Apple Podcasts, Spotify or YouTube. Prime Members can listen ad-free on Amazon Music. For more, visit barstool.link/mworthofgame',
+    },
+    'im:price': {
+      label: 'Get',
+      attributes: {
+        amount: '0',
+        currency: 'USD',
+      },
+    },
+    'im:contentType': {
+      attributes: {
+        term: 'Podcast',
+        label: 'Podcast',
+      },
+    },
+    title: {
+      label: 'Million Dollaz Worth Of Game - Barstool Sports',
+    },
+    link: {
+      attributes: {
+        rel: 'alternate',
+        type: 'text/html',
+        href: 'https://podcasts.apple.com/us/podcast/million-dollaz-worth-of-game/id1460157002?uo=2',
+      },
+    },
+    id: {
+      label:
+        'https://podcasts.apple.com/us/podcast/million-dollaz-worth-of-game/id1460157002?uo=2',
+      attributes: {
+        'im:id': '1460157002',
+      },
+    },
+    'im:artist': {
+      label: 'Barstool Sports',
+      attributes: {
+        href: 'https://podcasts.apple.com/us/artist/barstool-sports/1524874689?uo=2',
+      },
+    },
+    category: {
+      attributes: {
+        'im:id': '1523',
+        term: 'Music Commentary',
+        scheme:
+          'https://podcasts.apple.com/us/genre/podcasts-music-music-commentary/id1523?uo=2',
+        label: 'Music Commentary',
+      },
+    },
+    'im:releaseDate': {
+      label: '2023-03-19T16:30:00-07:00',
+      attributes: {
+        label: 'March 19, 2023',
+      },
+    },
+  },
+  {
+    'im:name': {
+      label: 'DISGRACELAND',
+    },
+    'im:image': [
+      {
+        label:
+          'https://is5-ssl.mzstatic.com/image/thumb/Podcasts123/v4/9b/56/5c/9b565c54-ffd7-be9d-ff96-be60e36ae59a/mza_14743797108223744429.jpeg/55x55bb.png',
+        attributes: {
+          height: '55',
+        },
+      },
+      {
+        label:
+          'https://is2-ssl.mzstatic.com/image/thumb/Podcasts123/v4/9b/56/5c/9b565c54-ffd7-be9d-ff96-be60e36ae59a/mza_14743797108223744429.jpeg/60x60bb.png',
+        attributes: {
+          height: '60',
+        },
+      },
+      {
+        label:
+          'https://is4-ssl.mzstatic.com/image/thumb/Podcasts123/v4/9b/56/5c/9b565c54-ffd7-be9d-ff96-be60e36ae59a/mza_14743797108223744429.jpeg/170x170bb.png',
+        attributes: {
+          height: '170',
+        },
+      },
+    ],
+    summary: {
+      label:
+        'Disgraceland is the award winning music podcast hosted by Jake Brennan that explores the alleged true crime antics and criminal connections of musicians we love like Jerry Lee Lewis, the Rolling Stones, Taylor Swift, David Bowie, Cardi B, the Grateful Dead, Amy Winehouse, Bob Marley, and more. Disgraceland is a scripted, single voice narrative storytelling podcast that melds true crime, music history, mystery, and misadventure. Disgraceland is not a journalistic podcast. It is an entertainment podcast inspired by true events. Certain dialogue and scenes are sometimes fictionalized for dramatic purposes as they are in most scripted entertainment based on true events. Sources and credits for each episode are available at disgracelandpod.com. Full scripted episodes are released every Tuesday. Bonus “After Party” episodes are released every Thursday. Disgraceland is available wherever you get your podcasts.',
+    },
+    'im:price': {
+      label: 'Get',
+      attributes: {
+        amount: '0',
+        currency: 'USD',
+      },
+    },
+    'im:contentType': {
+      attributes: {
+        term: 'Podcast',
+        label: 'Podcast',
+      },
+    },
+    title: {
+      label: 'DISGRACELAND - Double Elvis',
+    },
+    link: {
+      attributes: {
+        rel: 'alternate',
+        type: 'text/html',
+        href: 'https://podcasts.apple.com/us/podcast/disgraceland/id1275172907?uo=2',
+      },
+    },
+    id: {
+      label:
+        'https://podcasts.apple.com/us/podcast/disgraceland/id1275172907?uo=2',
+      attributes: {
+        'im:id': '1275172907',
+      },
+    },
+    'im:artist': {
+      label: 'Double Elvis',
+    },
+    category: {
+      attributes: {
+        'im:id': '1310',
+        term: 'Music',
+        scheme:
+          'https://podcasts.apple.com/us/genre/podcasts-music/id1310?uo=2',
+        label: 'Music',
+      },
+    },
+    'im:releaseDate': {
+      label: '2023-03-28T00:07:00-07:00',
+      attributes: {
+        label: 'March 28, 2023',
+      },
+    },
+  },
+  {
+    'im:name': {
+      label: 'New Rory & MAL',
+    },
+    'im:image': [
+      {
+        label:
+          'https://is4-ssl.mzstatic.com/image/thumb/Podcasts116/v4/92/65/c6/9265c6dd-7db1-8160-c97c-bef564d23610/mza_16535014723154009651.jpg/55x55bb.png',
+        attributes: {
+          height: '55',
+        },
+      },
+      {
+        label:
+          'https://is3-ssl.mzstatic.com/image/thumb/Podcasts116/v4/92/65/c6/9265c6dd-7db1-8160-c97c-bef564d23610/mza_16535014723154009651.jpg/60x60bb.png',
+        attributes: {
+          height: '60',
+        },
+      },
+      {
+        label:
+          'https://is4-ssl.mzstatic.com/image/thumb/Podcasts116/v4/92/65/c6/9265c6dd-7db1-8160-c97c-bef564d23610/mza_16535014723154009651.jpg/170x170bb.png',
+        attributes: {
+          height: '170',
+        },
+      },
+    ],
+    summary: {
+      label:
+        'New stories, new laughs, new random hot takes that no one asked for... New Rory & Mal.',
+    },
+    'im:price': {
+      label: 'Get',
+      attributes: {
+        amount: '0',
+        currency: 'USD',
+      },
+    },
+    'im:contentType': {
+      attributes: {
+        term: 'Podcast',
+        label: 'Podcast',
+      },
+    },
+    title: {
+      label: 'New Rory & MAL - Rory Farrell & Jamil "Mal" Clay',
+    },
+    link: {
+      attributes: {
+        rel: 'alternate',
+        type: 'text/html',
+        href: 'https://podcasts.apple.com/us/podcast/new-rory-mal/id1572182022?uo=2',
+      },
+    },
+    id: {
+      label:
+        'https://podcasts.apple.com/us/podcast/new-rory-mal/id1572182022?uo=2',
+      attributes: {
+        'im:id': '1572182022',
+      },
+    },
+    'im:artist': {
+      label: 'Rory Farrell & Jamil "Mal" Clay',
+    },
+    category: {
+      attributes: {
+        'im:id': '1310',
+        term: 'Music',
+        scheme:
+          'https://podcasts.apple.com/us/genre/podcasts-music/id1310?uo=2',
+        label: 'Music',
+      },
+    },
+    'im:releaseDate': {
+      label: '2023-03-24T01:00:00-07:00',
+      attributes: {
+        label: 'March 24, 2023',
+      },
+    },
+  },
+  {
+    'im:name': {
+      label: 'Back on Figg',
+    },
+    'im:price': {
+      label: 'Get',
+      attributes: {
+        amount: '0',
+        currency: 'USD',
+      },
+    },
+    'im:image': [
+      {
+        label:
+          'https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/cd/82/0c/cd820cfe-fce5-56aa-ef2c-da67576fd4b3/mza_3363134633883714623.jpeg/55x55bb.png',
+        attributes: {
+          height: '55',
+        },
+      },
+      {
+        label:
+          'https://is3-ssl.mzstatic.com/image/thumb/Podcasts112/v4/cd/82/0c/cd820cfe-fce5-56aa-ef2c-da67576fd4b3/mza_3363134633883714623.jpeg/60x60bb.png',
+        attributes: {
+          height: '60',
+        },
+      },
+      {
+        label:
+          'https://is2-ssl.mzstatic.com/image/thumb/Podcasts112/v4/cd/82/0c/cd820cfe-fce5-56aa-ef2c-da67576fd4b3/mza_3363134633883714623.jpeg/170x170bb.png',
+        attributes: {
+          height: '170',
+        },
+      },
+    ],
+    summary: {
+      label: 'Back on Figg Youtube Live Stream. Hosted by T-Rell and Smacc',
+    },
+    'im:artist': {
+      label: 'T-Rell B.O.F.',
+    },
+    title: {
+      label: 'Back on Figg - T-Rell B.O.F.',
+    },
+    link: {
+      attributes: {
+        rel: 'alternate',
+        type: 'text/html',
+        href: 'https://podcasts.apple.com/us/podcast/back-on-figg/id1658497449?uo=2',
+      },
+    },
+    id: {
+      label:
+        'https://podcasts.apple.com/us/podcast/back-on-figg/id1658497449?uo=2',
+      attributes: {
+        'im:id': '1658497449',
+      },
+    },
+    'im:contentType': {
+      attributes: {
+        term: 'Podcast',
+        label: 'Podcast',
+      },
+    },
+    category: {
+      attributes: {
+        'im:id': '1525',
+        term: 'Music Interviews',
+        scheme:
+          'https://podcasts.apple.com/us/genre/podcasts-music-music-interviews/id1525?uo=2',
+        label: 'Music Interviews',
+      },
+    },
+    'im:releaseDate': {
+      label: '2023-03-28T15:39:00-07:00',
+      attributes: {
+        label: 'March 28, 2023',
+      },
+    },
+  },
+  {
+    'im:name': {
+      label:
+        'Broken Record with Rick Rubin, Malcolm Gladwell, Bruce Headlam and Justin Richmond',
+    },
+    'im:image': [
+      {
+        label:
+          'https://is3-ssl.mzstatic.com/image/thumb/Podcasts112/v4/7b/12/d5/7b12d5ec-7264-6693-8a8e-e6b414a783c3/mza_10388338206053029687.jpg/55x55bb.png',
+        attributes: {
+          height: '55',
+        },
+      },
+      {
+        label:
+          'https://is5-ssl.mzstatic.com/image/thumb/Podcasts112/v4/7b/12/d5/7b12d5ec-7264-6693-8a8e-e6b414a783c3/mza_10388338206053029687.jpg/60x60bb.png',
+        attributes: {
+          height: '60',
+        },
+      },
+      {
+        label:
+          'https://is4-ssl.mzstatic.com/image/thumb/Podcasts112/v4/7b/12/d5/7b12d5ec-7264-6693-8a8e-e6b414a783c3/mza_10388338206053029687.jpg/170x170bb.png',
+        attributes: {
+          height: '170',
+        },
+      },
+    ],
+    summary: {
+      label:
+        'From Rick Rubin, Malcolm Gladwell, Bruce Headlam, and Justin Richmond. The musicians you love talk about their life, inspiration, and craft. Then play. iHeartMedia is the exclusive podcast partner of Pushkin Industries.',
+    },
+    'im:price': {
+      label: 'Get',
+      attributes: {
+        amount: '0',
+        currency: 'USD',
+      },
+    },
+    'im:contentType': {
+      attributes: {
+        term: 'Podcast',
+        label: 'Podcast',
+      },
+    },
+    title: {
+      label:
+        'Broken Record with Rick Rubin, Malcolm Gladwell, Bruce Headlam and Justin Richmond - Pushkin Industries',
+    },
+    link: {
+      attributes: {
+        rel: 'alternate',
+        type: 'text/html',
+        href: 'https://podcasts.apple.com/us/podcast/broken-record-with-rick-rubin-malcolm-gladwell-bruce/id1311004083?uo=2',
+      },
+    },
+    id: {
+      label:
+        'https://podcasts.apple.com/us/podcast/broken-record-with-rick-rubin-malcolm-gladwell-bruce/id1311004083?uo=2',
+      attributes: {
+        'im:id': '1311004083',
+      },
+    },
+    'im:artist': {
+      label: 'Pushkin Industries',
+      attributes: {
+        href: 'https://podcasts.apple.com/us/artist/pushkin-industries/1465988663?uo=2',
+      },
+    },
+    category: {
+      attributes: {
+        'im:id': '1310',
+        term: 'Music',
+        scheme:
+          'https://podcasts.apple.com/us/genre/podcasts-music/id1310?uo=2',
+        label: 'Music',
+      },
+    },
+    'im:releaseDate': {
+      label: '2023-03-28T02:00:00-07:00',
+      attributes: {
+        label: 'March 28, 2023',
+      },
+    },
+  },
+  {
+    'im:name': {
+      label: '"See, The Thing Is..."',
+    },
+    'im:image': [
+      {
+        label:
+          'https://is5-ssl.mzstatic.com/image/thumb/Podcasts112/v4/9f/fb/91/9ffb916a-af0d-0fb8-3646-57eeda5314c3/mza_945735870779170317.jpeg/55x55bb.png',
+        attributes: {
+          height: '55',
+        },
+      },
+      {
+        label:
+          'https://is2-ssl.mzstatic.com/image/thumb/Podcasts112/v4/9f/fb/91/9ffb916a-af0d-0fb8-3646-57eeda5314c3/mza_945735870779170317.jpeg/60x60bb.png',
+        attributes: {
+          height: '60',
+        },
+      },
+      {
+        label:
+          'https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/9f/fb/91/9ffb916a-af0d-0fb8-3646-57eeda5314c3/mza_945735870779170317.jpeg/170x170bb.png',
+        attributes: {
+          height: '170',
+        },
+      },
+    ],
+    summary: {
+      label:
+        'Opinionated & informative with a taste of toxic: join Bridget Kelly & Mandii B every Tuesday for all things pop culture, music, and media through the minds of women.',
+    },
+    'im:price': {
+      label: 'Get',
+      attributes: {
+        amount: '0',
+        currency: 'USD',
+      },
+    },
+    'im:contentType': {
+      attributes: {
+        term: 'Podcast',
+        label: 'Podcast',
+      },
+    },
+    title: {
+      label: '"See, The Thing Is..." - All The Things Productions',
+    },
+    link: {
+      attributes: {
+        rel: 'alternate',
+        type: 'text/html',
+        href: 'https://podcasts.apple.com/us/podcast/see-the-thing-is/id1534096260?uo=2',
+      },
+    },
+    id: {
+      label:
+        'https://podcasts.apple.com/us/podcast/see-the-thing-is/id1534096260?uo=2',
+      attributes: {
+        'im:id': '1534096260',
+      },
+    },
+    'im:artist': {
+      label: 'All The Things Productions',
+    },
+    category: {
+      attributes: {
+        'im:id': '1523',
+        term: 'Music Commentary',
+        scheme:
+          'https://podcasts.apple.com/us/genre/podcasts-music-music-commentary/id1523?uo=2',
+        label: 'Music Commentary',
+      },
+    },
+    'im:releaseDate': {
+      label: '2023-03-28T00:00:00-07:00',
+      attributes: {
+        label: 'March 28, 2023',
+      },
+    },
+  },
+  {
+    'im:name': {
+      label: 'Frosted Tips with Lance Bass',
+    },
+    'im:image': [
+      {
+        label:
+          'https://is2-ssl.mzstatic.com/image/thumb/Podcasts113/v4/07/88/b3/0788b35f-1829-6fbd-2488-ecaf83b8d8ab/mza_9852863690630397024.jpg/55x55bb.png',
+        attributes: {
+          height: '55',
+        },
+      },
+      {
+        label:
+          'https://is4-ssl.mzstatic.com/image/thumb/Podcasts113/v4/07/88/b3/0788b35f-1829-6fbd-2488-ecaf83b8d8ab/mza_9852863690630397024.jpg/60x60bb.png',
+        attributes: {
+          height: '60',
+        },
+      },
+      {
+        label:
+          'https://is3-ssl.mzstatic.com/image/thumb/Podcasts113/v4/07/88/b3/0788b35f-1829-6fbd-2488-ecaf83b8d8ab/mza_9852863690630397024.jpg/170x170bb.png',
+        attributes: {
+          height: '170',
+        },
+      },
+    ],
+    summary: {
+      label:
+        "Their ballads and bops got you through your teenage years...now let your favorite boy bands guide you through adulting! \n\n\n\nThe ultimate boy-bander and host Lance Bass will help us we navigate the ups and downs of parenting, marriage, and everything in between.\n\n\n\nEach week, Lance Bass and his husband Michael will be joined by our biggest boy band crushes!\n\n\n\nStep-by-step...we will relive decades of Boy Band nostalgia by chatting with your all-time faves each week. \n\nFrom New Kids to B-S-B to 98 degrees...and of course, NSYNC....no boy band left behind!!\n\n\n\nSo let's go in One Direction and have some fun...because we should never have to say Bye, Bye, Bye when you got The Right Stuff! ",
+    },
+    'im:price': {
+      label: 'Get',
+      attributes: {
+        amount: '0',
+        currency: 'USD',
+      },
+    },
+    'im:contentType': {
+      attributes: {
+        term: 'Podcast',
+        label: 'Podcast',
+      },
+    },
+    title: {
+      label: 'Frosted Tips with Lance Bass - iHeartPodcasts',
+    },
+    link: {
+      attributes: {
+        rel: 'alternate',
+        type: 'text/html',
+        href: 'https://podcasts.apple.com/us/podcast/frosted-tips-with-lance-bass/id1661154206?uo=2',
+      },
+    },
+    id: {
+      label:
+        'https://podcasts.apple.com/us/podcast/frosted-tips-with-lance-bass/id1661154206?uo=2',
+      attributes: {
+        'im:id': '1661154206',
+      },
+    },
+    'im:artist': {
+      label: 'iHeartPodcasts',
+    },
+    category: {
+      attributes: {
+        'im:id': '1310',
+        term: 'Music',
+        scheme:
+          'https://podcasts.apple.com/us/genre/podcasts-music/id1310?uo=2',
+        label: 'Music',
+      },
+    },
+    'im:releaseDate': {
+      label: '2023-03-19T21:00:00-07:00',
+      attributes: {
+        label: 'March 19, 2023',
+      },
+    },
+  },
+  {
+    'im:name': {
+      label: 'NOT 97',
+    },
+    'im:image': [
+      {
+        label:
+          'https://is2-ssl.mzstatic.com/image/thumb/Podcasts126/v4/29/47/53/29475308-84d0-4db3-8a97-8e558fdb0937/mza_12740362607328937685.jpeg/55x55bb.png',
+        attributes: {
+          height: '55',
+        },
+      },
+      {
+        label:
+          'https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/29/47/53/29475308-84d0-4db3-8a97-8e558fdb0937/mza_12740362607328937685.jpeg/60x60bb.png',
+        attributes: {
+          height: '60',
+        },
+      },
+      {
+        label:
+          'https://is4-ssl.mzstatic.com/image/thumb/Podcasts126/v4/29/47/53/29475308-84d0-4db3-8a97-8e558fdb0937/mza_12740362607328937685.jpeg/170x170bb.png',
+        attributes: {
+          height: '170',
+        },
+      },
+    ],
+    summary: {
+      label:
+        'NOT 97 is a home for discovering new music from talented, under-the-radar artists around the world. Each episode features a roundtable conversation with industry insiders, influential voices, and artists introducing their new favorite songs organized by unique playlist categories like Introverted Dance Music — poised to get you moving while cooking at home — and Shea Butter Approved — carefully crafted for a candle-lit evening. Additionally, Season Nine of NOT 97 will see a range of artists joining the show for intimate interviews and in-studio live session — from Jordan Ward, to Fana Hues, Alex Vaughn, and more. NOT 97 is produced in partnership with The Orchard & Human Re Sources.',
+    },
+    'im:price': {
+      label: 'Get',
+      attributes: {
+        amount: '0',
+        currency: 'USD',
+      },
+    },
+    'im:contentType': {
+      attributes: {
+        term: 'Podcast',
+        label: 'Podcast',
+      },
+    },
+    title: {
+      label: 'NOT 97 - NOT 97 and The Orchard',
+    },
+    link: {
+      attributes: {
+        rel: 'alternate',
+        type: 'text/html',
+        href: 'https://podcasts.apple.com/us/podcast/not-97/id1265619844?uo=2',
+      },
+    },
+    id: {
+      label: 'https://podcasts.apple.com/us/podcast/not-97/id1265619844?uo=2',
+      attributes: {
+        'im:id': '1265619844',
+      },
+    },
+    'im:artist': {
+      label: 'NOT 97 and The Orchard',
+    },
+    category: {
+      attributes: {
+        'im:id': '1523',
+        term: 'Music Commentary',
+        scheme:
+          'https://podcasts.apple.com/us/genre/podcasts-music-music-commentary/id1523?uo=2',
+        label: 'Music Commentary',
+      },
+    },
+    'im:releaseDate': {
+      label: '2023-03-20T21:00:00-07:00',
+      attributes: {
+        label: 'March 20, 2023',
+      },
+    },
+  },
+  {
+    'im:name': {
+      label: 'Louder Than A Riot',
+    },
+    'im:image': [
+      {
+        label:
+          'https://is3-ssl.mzstatic.com/image/thumb/Podcasts116/v4/2c/4b/43/2c4b43cc-f9f1-684c-48d6-ea61d330df16/mza_13281496189559218024.png/55x55bb.png',
+        attributes: {
+          height: '55',
+        },
+      },
+      {
+        label:
+          'https://is5-ssl.mzstatic.com/image/thumb/Podcasts116/v4/2c/4b/43/2c4b43cc-f9f1-684c-48d6-ea61d330df16/mza_13281496189559218024.png/60x60bb.png',
+        attributes: {
+          height: '60',
+        },
+      },
+      {
+        label:
+          'https://is5-ssl.mzstatic.com/image/thumb/Podcasts116/v4/2c/4b/43/2c4b43cc-f9f1-684c-48d6-ea61d330df16/mza_13281496189559218024.png/170x170bb.png',
+        attributes: {
+          height: '170',
+        },
+      },
+    ],
+    summary: {
+      label:
+        "Hip-hop emerged from the voices of the unheard. But freedom doesn't ring the same for everyone. Inside all corners of the culture, Black women and queer folk have dealt with the same oppression the music was built to escape. Season 2 of Louder Than A Riot examines who hip-hop marginalizes, and how misogynoir — the specific racist misogyny against Black women — is embedded into the fabric of the culture that we love.\n\nFrom Rico Nasty facing harassment from toxic fans, to Saucy Santana's unapologetically femme aesthetics in a queerphobic industry, to the assault case that put Megan Thee Stallion's image on trial, each episode of Louder Than A Riot unpacks the unspoken rules of rap that discriminate against a select few and have held the entire culture back. \n\nHosted by NPR Music's Sidney Madden and Rodney Carmichael, Louder Than A Riot confronts power from every angle – from the power the genre wields over its artists, to the power plays that its rulebreakers take in order to get heard. In the midst of a so-called Renaissance for women in rap, these stories reveal a rot at the core of the culture that reflects how voices, bodies, and rights are still policed in America.",
+    },
+    'im:price': {
+      label: 'Get',
+      attributes: {
+        amount: '0',
+        currency: 'USD',
+      },
+    },
+    'im:contentType': {
+      attributes: {
+        term: 'Podcast',
+        label: 'Podcast',
+      },
+    },
+    title: {
+      label: 'Louder Than A Riot - NPR',
+    },
+    link: {
+      attributes: {
+        rel: 'alternate',
+        type: 'text/html',
+        href: 'https://podcasts.apple.com/us/podcast/louder-than-a-riot/id1532093071?uo=2',
+      },
+    },
+    id: {
+      label:
+        'https://podcasts.apple.com/us/podcast/louder-than-a-riot/id1532093071?uo=2',
+      attributes: {
+        'im:id': '1532093071',
+      },
+    },
+    'im:artist': {
+      label: 'NPR',
+      attributes: {
+        href: 'https://podcasts.apple.com/us/artist/npr/125443881?uo=2',
+      },
+    },
+    category: {
+      attributes: {
+        'im:id': '1525',
+        term: 'Music Interviews',
+        scheme:
+          'https://podcasts.apple.com/us/genre/podcasts-music-music-interviews/id1525?uo=2',
+        label: 'Music Interviews',
+      },
+    },
+    'im:releaseDate': {
+      label: '2023-03-16T02:00:00-07:00',
+      attributes: {
+        label: 'March 16, 2023',
+      },
+    },
+  },
+  {
+    'im:name': {
+      label: 'Norah Jones Is Playing Along',
+    },
+    'im:image': [
+      {
+        label:
+          'https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/45/d1/b6/45d1b677-8f9c-ff35-8c04-897a4de8b162/mza_9278186528825138026.jpg/55x55bb.png',
+        attributes: {
+          height: '55',
+        },
+      },
+      {
+        label:
+          'https://is3-ssl.mzstatic.com/image/thumb/Podcasts122/v4/45/d1/b6/45d1b677-8f9c-ff35-8c04-897a4de8b162/mza_9278186528825138026.jpg/60x60bb.png',
+        attributes: {
+          height: '60',
+        },
+      },
+      {
+        label:
+          'https://is4-ssl.mzstatic.com/image/thumb/Podcasts122/v4/45/d1/b6/45d1b677-8f9c-ff35-8c04-897a4de8b162/mza_9278186528825138026.jpg/170x170bb.png',
+        attributes: {
+          height: '170',
+        },
+      },
+    ],
+    summary: {
+      label:
+        'Norah Jones is a multi-GRAMMY winning singer and pianist who loves playing music with people, so she started her own podcast to do just that. Each episode, she sits down with a different guest for impromptu musical collaborations and candid conversation. Her guests come from all walks of life and every musical style and you never know where the songs will take them. So, come hang out in the studio. Norah Jones is Playing Along!',
+    },
+    'im:price': {
+      label: 'Get',
+      attributes: {
+        amount: '0',
+        currency: 'USD',
+      },
+    },
+    'im:contentType': {
+      attributes: {
+        term: 'Podcast',
+        label: 'Podcast',
+      },
+    },
+
+    title: {
+      label: 'Norah Jones Is Playing Along - Norah Jones',
+    },
+    link: {
+      attributes: {
+        rel: 'alternate',
+        type: 'text/html',
+        href: 'https://podcasts.apple.com/us/podcast/norah-jones-is-playing-along/id1645438817?uo=2',
+      },
+    },
+    id: {
+      label:
+        'https://podcasts.apple.com/us/podcast/norah-jones-is-playing-along/id1645438817?uo=2',
+      attributes: {
+        'im:id': '1645438817',
+      },
+    },
+    'im:artist': {
+      label: 'Norah Jones',
+    },
+    category: {
+      attributes: {
+        'im:id': '1525',
+        term: 'Music Interviews',
+        scheme:
+          'https://podcasts.apple.com/us/genre/podcasts-music-music-interviews/id1525?uo=2',
+        label: 'Music Interviews',
+      },
+    },
+    'im:releaseDate': {
+      label: '2023-03-13T21:00:00-07:00',
+      attributes: {
+        label: 'March 13, 2023',
+      },
+    },
+  },
+]
+
 export const mockPodcast: Podcast = {
   'im:name': {
     label: 'The Joe Budden Podcast',
