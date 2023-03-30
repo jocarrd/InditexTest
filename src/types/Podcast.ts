@@ -34,6 +34,7 @@ interface IDAttributes {
 
 interface IMArtist {
   label: string
+  attributes?: { href: string }
 }
 
 interface IMContentType {
