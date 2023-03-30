@@ -7,7 +7,6 @@ type SearcherProps = {
 }
 
 export const Searcher = ({ podcasts, filterPodcasts }: SearcherProps) => {
-  const [search, setSearch] = useState<string>('')
   const [initialValue, setInitialValue] = useState<Podcast[]>()
   const ref = useRef<HTMLInputElement>(null)
 
@@ -17,14 +16,16 @@ export const Searcher = ({ podcasts, filterPodcasts }: SearcherProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const search = e.target.value
+    console.log(search)
 
     if (!search) {
       initialValue && filterPodcasts(initialValue)
       return
     }
-    const filteredPodcasts = podcasts.filter(
+
+    const filteredPodcasts = initialValue?.filter(
       ({ title, 'im:artist': artist }) => {
         const titleMatch = title.label
           .toString()
@@ -39,17 +40,15 @@ export const Searcher = ({ podcasts, filterPodcasts }: SearcherProps) => {
         return titleMatch || artistMatch
       }
     )
-    filteredPodcasts.length > 0 && filterPodcasts(filteredPodcasts)
+
+    filteredPodcasts && filterPodcasts(filteredPodcasts)
   }
 
   return (
-    <form onSubmit={handleSubmit} id="searcherForm">
+    <form id="searcherForm">
       <input
         ref={ref}
-        value={search}
-        onChange={(e: ChangeEvent<HTMLInputElement>) =>
-          setSearch(e.target.value)
-        }
+        onChange={handleChange}
         className="border-gray-300 border-2 p-2 "
         placeholder="Filter podcasts ..."
         type="search"
