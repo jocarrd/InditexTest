@@ -1,7 +1,7 @@
-import { useParams } from 'react-router-dom'
 import { Layout } from '../../components/Layout'
 import { PodcastDetail } from '../../components/PodcastDetail'
 import { usePodcast } from '../../hooks/usePodcast'
+import { Navigate, useParams } from 'react-router-dom'
 
 export const Episode = () => {
   const { episodeid = '', podcastid } = useParams()
@@ -11,6 +11,9 @@ export const Episode = () => {
   } = usePodcast({ id: podcastid || '' })
 
   const episode = findEpisode(episodeid)
+
+  if (!episode) return <Navigate to="/" />
+
   return (
     <Layout loading={loading}>
       <div className="lg:grid lg:grid-cols-3 px-4 flex flex-col py-4 md:px-9">
