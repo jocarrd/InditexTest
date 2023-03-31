@@ -18,7 +18,6 @@ export const Searcher = ({ podcasts, filterPodcasts }: SearcherProps) => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const search = e.target.value
-    console.log(search)
 
     if (!search) {
       initialValue && filterPodcasts(initialValue)
