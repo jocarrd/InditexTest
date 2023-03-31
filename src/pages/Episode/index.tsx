@@ -1,6 +1,6 @@
 import { Layout } from '../../components/Layout'
 import { PodcastDetail } from '../../components/PodcastDetail'
-import { usePodcast } from '../../hooks/usePodcast'
+import { useEpisodes } from '../../hooks/useEpisodes'
 import { Navigate, useParams } from 'react-router-dom'
 
 export const Episode = () => {
@@ -8,7 +8,7 @@ export const Episode = () => {
   const {
     state: { podcastInfo, loading },
     actions: { findEpisode },
-  } = usePodcast({ id: podcastid || '' })
+  } = useEpisodes({ id: podcastid || '' })
 
   const episode = findEpisode(episodeid)
 

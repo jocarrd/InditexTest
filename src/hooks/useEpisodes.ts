@@ -10,7 +10,7 @@ type Props = {
   id: string
 }
 
-export const usePodcast = ({ id }: Props) => {
+export const useEpisodes = ({ id }: Props) => {
   const [loading, setLoading] = useState(false)
   const [episodes, setEpisodes] = useState<PodcastDetail>(
     () => JSON.parse(localStorage.getItem(id) as string)?.episodes
@@ -26,17 +26,19 @@ export const usePodcast = ({ id }: Props) => {
 
     if (!episodes || revalidate(EXPIRATION_TIME, storedTime)) {
       setLoading(true)
-      Services.getPodcastDetail(id).then((episodes) => {
-        setEpisodes(episodes)
-        setLoading(false)
-        localStorage.setItem(
-          id,
-          JSON.stringify({
-            episodes,
-            expiration: Date.now().toString(),
-          })
-        )
-      })
+      Services.getPodcastDetail(id)
+        .then((episodes) => {
+          setEpisodes(episodes)
+          setLoading(false)
+          localStorage.setItem(
+            id,
+            JSON.stringify({
+              episodes,
+              expiration: Date.now().toString(),
+            })
+          )
+        })
+        .catch(console.error)
     }
   }, [])
 

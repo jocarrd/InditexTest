@@ -7,13 +7,14 @@ export const Services = {
     new Promise((resolve, reject) => {
       fetch(MAIN_PODCASTS)
         .then((response) => response.json())
-        .then((response) => resolve(response.feed.entry))
+        .then((data) => resolve(JSON.parse(data.contents).feed.entry))
         .catch(reject)
     }),
   getPodcastDetail: (id: string): Promise<PodcastDetail> =>
     new Promise((resolve, reject) => {
-      fetch(PODCAST_DETAIL.replace('{id}', id))
-        .then((response) => resolve(response.json()))
+      fetch(PODCAST_DETAIL.replace('idnum', id))
+        .then((response) => response.json())
+        .then((data) => resolve(JSON.parse(data.contents)))
         .catch(reject)
     }),
 }

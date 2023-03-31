@@ -1,7 +1,7 @@
-# Mini-aplicación para escuchar podcasts musicales
+# Podcaster
 
 
-Mini-aplicación para escuchar podcasts musicales. La aplicación tiene tres vistas principales:
+Mini-aplicación para escuchar podcasts . La aplicación tiene tres vistas principales:
 
 1.  Vista principal: donde se muestra una lista de todos los podcasts disponibles para escuchar.
 2.  Detalles de un podcast: donde se muestra información detallada sobre un podcast en particular, como la descripción del podcast, la imagen y una lista de episodios disponibles.

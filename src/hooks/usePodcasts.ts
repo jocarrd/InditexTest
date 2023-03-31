@@ -18,14 +18,16 @@ export const usePodcasts = () => {
 
     if (!podcasts || revalidate(EXPIRATION_TIME, storedTime)) {
       setLoading(true)
-      Services.getMainPodcasts().then((podcasts) => {
-        setPodcasts(podcasts)
-        setLoading(false)
-        localStorage.setItem(
-          'podcasts',
-          JSON.stringify({ podcasts, expiration: Date.now().toString() })
-        )
-      })
+      Services.getMainPodcasts()
+        .then((podcasts) => {
+          setPodcasts(podcasts)
+          setLoading(false)
+          localStorage.setItem(
+            'podcasts',
+            JSON.stringify({ podcasts, expiration: Date.now().toString() })
+          )
+        })
+        .catch(console.error)
     }
   }, [])
 
